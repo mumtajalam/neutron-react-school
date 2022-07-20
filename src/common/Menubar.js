@@ -28,6 +28,9 @@ const Menubar = () => {
                 >
                   HookLayoutEffect
                 </Link>
+                <Link to="/github" className="nav-link btn btn-outline-success">
+                  Github
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
             <Link to="/todo" className="nav-link btn btn-outline-success">
@@ -63,6 +66,9 @@ const Menubar = () => {
             </Link>
             <Link to="/hookmemo" className="nav-link btn btn-outline-success">
               HookMemo
+            </Link>
+            <Link to="/demo" className="nav-link btn btn-outline-success">
+              Demo
             </Link>
           </Navbar>
         </div>

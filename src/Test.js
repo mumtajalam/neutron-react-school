@@ -1,25 +1,34 @@
 import React from "react";
+import { useState } from "react";
 
-class Demo extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0,
-    };
-  }
-  handlesubmit = () => {
-    this.setState({
-      count: this.state.count + 1,
+const Test = () => {
+  const [temp, setTemp] = useState(1);
+  const [item, setItem] = useState([]);
+
+  const handlesubmit = () => {
+    setTemp(temp + 1);
+    console.log(item);
+    setItem((oldvalue) => {
+      return [temp, ...oldvalue];
     });
   };
 
-  render() {
-    return (
-      <>
-        <div>{this.state.count}</div>
-        <button onClick={this.handlesubmit}>INc</button>
-      </>
-    );
-  }
-}
-export default Demo;
+  const Allclear = () => {
+    setItem([]);
+    setTemp(1);
+  };
+  return (
+    <div>
+      <br></br>
+      OUTPUT:-
+      <br></br>
+      {item && item.map((temps) => <span>{temps}</span>)}
+      <br></br>
+      <button onClick={handlesubmit}>Add values</button>
+      <button onClick={Allclear}>Clear values</button>
+      <br></br>
+    </div>
+  );
+};
+
+export default Test;

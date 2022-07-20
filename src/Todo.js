@@ -14,6 +14,14 @@ const Todo = () => {
     });
     setInput("");
   };
+
+  const DeleteFn = (id) => {
+    setItem((oldvalue) => {
+      return oldvalue.filter((arrElem, index) => {
+        return index !== id;
+      });
+    });
+  };
   return (
     <>
       <div className="container">
@@ -28,9 +36,14 @@ const Todo = () => {
               onChange={handleChange}
             />
             <button onClick={handlesubmit}>Add</button>
+
             <ol>
-              {item.map((temp) => {
-                return <li>{temp}</li>;
+              {item.map((temp, index) => {
+                return (
+                  <>
+                    <li>{temp + index}</li>
+                  </>
+                );
               })}
             </ol>
           </div>

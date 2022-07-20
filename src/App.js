@@ -18,6 +18,8 @@ import HookLayoutEffect from "./hooks/HookLayoutEffect";
 import HookParams from "./hooks/HookParams";
 import HookMemo from "./hooks/HookMemo";
 import FormValidation from "./FormValidation";
+import Github from "./Github";
+import Demo from "./Demo";
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
                 <Route path="/hookparams/:id" element={<HookParams />} />
                 <Route path="/hookmemo" element={<HookMemo />} />
                 <Route path="/formvalidation" element={<FormValidation />} />
+                <Route path="/github" element={<Github />} />
+                <Route path="/demo" element={<Demo />} />
               </Routes>
             </div>
           </div>
