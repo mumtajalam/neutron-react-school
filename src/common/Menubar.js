@@ -14,6 +14,56 @@ const Menubar = () => {
               className="btn btn-outline-success"
             >
               <NavDropdown.Item>
+                <Link to="/miscs" className="nav-link btn btn-outline-success">
+                  Miscs
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/hookreducer"
+                  className="nav-link btn btn-outline-success"
+                >
+                  Reducer
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/hookcallback"
+                  className="nav-link btn btn-outline-success"
+                >
+                  HookCallback
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/timer" className="nav-link btn btn-outline-success">
+                  Timer
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/githubfn"
+                  className="nav-link btn btn-outline-success"
+                >
+                  Github Fn
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/githubclass"
+                  className="nav-link btn btn-outline-success"
+                >
+                  Github Class
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/classcomp"
+                  className="nav-link btn btn-outline-success"
+                >
+                  Class Comp
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
                 <Link
                   to="/formvalidation"
                   className="nav-link btn btn-outline-success"
@@ -23,13 +73,43 @@ const Menubar = () => {
               </NavDropdown.Item>
               <NavDropdown.Item>
                 <Link
+                  to="/usehook"
+                  className="nav-link btn btn-outline-success"
+                >
+                  UseHook
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/pagenum"
+                  className="nav-link btn btn-outline-success"
+                >
+                  PageNum
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/calcuinput"
+                  className="nav-link btn btn-outline-success"
+                >
+                  CalcuInput
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
                   to="/hooklayouteffect"
                   className="nav-link btn btn-outline-success"
                 >
                   HookLayoutEffect
                 </Link>
-                <Link to="/github" className="nav-link btn btn-outline-success">
-                  Github
+                <Link
+                  to="/lifecycle"
+                  className="nav-link btn btn-outline-success"
+                >
+                  LifeCycle
+                </Link>
+                <Link to="/emi" className="nav-link btn btn-outline-success">
+                  EMI
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -69,6 +149,13 @@ const Menubar = () => {
             </Link>
             <Link to="/demo" className="nav-link btn btn-outline-success">
               Demo
+            </Link>
+
+            <Link to="/hoccountry" className="nav-link btn btn-outline-success">
+              HOC Country
+            </Link>
+            <Link to="/hocstate" className="nav-link btn btn-outline-success">
+              HOC State
             </Link>
           </Navbar>
         </div>

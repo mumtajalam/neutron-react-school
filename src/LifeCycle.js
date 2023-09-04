@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 // import { DataAppContext } from "./common/DataApp";
 
-const GithubFn = () => {
+const LifeCycle = () => {
   const [issuesList, setIssuesList] = useState([]);
   const [pageNum, setPageNum] = useState(1);
   const [buttons, setButtons] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -41,7 +41,6 @@ const GithubFn = () => {
   //componentDidMount - just one time trigger
 
   useEffect(() => {
-    //callApi();
     console.log("useeffect of githubfn got triggered...");
   });
   //componentDidMount and componentDidUpdate - trigger every time - re-render
@@ -118,4 +117,4 @@ const GithubFn = () => {
   );
 };
 
-export default GithubFn;
+export default LifeCycle;

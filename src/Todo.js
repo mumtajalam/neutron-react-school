@@ -1,51 +1,96 @@
 import React, { useState } from "react";
 
 const Todo = () => {
-  const [input, setInput] = useState("");
+  const [inputData, setInputData] = useState("");
   const [item, setItem] = useState([]);
+  const [toggleSubmit, setToggleSubmit] = useState(true);
+  const [isEditItem, setIsEditItem] = useState(null);
 
-  const handleChange = (event) => {
-    setInput(event.target.value);
+  const handleSubmit = () => {
+    if (!inputData) {
+      alert("fill the data");
+    } else if (inputData && !toggleSubmit) {
+      setItem(
+        item.map((temp) => {
+          if (temp.id === isEditItem) {
+            return { ...item, name: inputData };
+          }
+          return temp;
+        })
+      );
+      setToggleSubmit(true);
+      setInputData("");
+      setIsEditItem(null);
+    } else {
+      let allInput = { id: new Date().getTime().toString(), name: inputData };
+      setItem([...item, allInput]);
+      setInputData("");
+    }
+  };
+  const editItem = (id) => {
+    let newEditItem = item.find((temp) => {
+      return temp.id === id;
+    });
+    setToggleSubmit(false);
+    setInputData(newEditItem.name);
+    setIsEditItem(id);
   };
 
-  const handlesubmit = () => {
-    setItem((oldvalue) => {
-      return [...oldvalue, input];
+  const deleteItem = (id) => {
+    const deleteItem = item.filter((temp) => {
+      return temp.id !== id;
     });
-    setInput("");
-  };
-
-  const DeleteFn = (id) => {
-    setItem((oldvalue) => {
-      return oldvalue.filter((arrElem, index) => {
-        return index !== id;
-      });
-    });
+    setItem(deleteItem);
   };
   return (
     <>
       <div className="container">
+        <h1 className="text-center">Add your List Here</h1>
+        <div className="d-flex justify-content-center">
+          <input
+            type="text"
+            value={inputData}
+            placeholder="add item"
+            onChange={(e) => setInputData(e.target.value)}
+          />
+          {toggleSubmit ? (
+            <i
+              className="fa fa-plus add-btn"
+              title="Add Item"
+              onClick={handleSubmit}
+            ></i>
+          ) : (
+            <i
+              className="fa fa-edit add-btn"
+              title="Add Item"
+              onClick={handleSubmit}
+            ></i>
+          )}
+        </div>
         <div className="row">
           <div className="col-12">
-            <h1>ToDo List</h1>
-            <br></br>
-            <input
-              type="text"
-              value={input}
-              placeholder="add item"
-              onChange={handleChange}
-            />
-            <button onClick={handlesubmit}>Add</button>
-
-            <ol>
-              {item.map((temp, index) => {
+            {item &&
+              item.map((temp) => {
                 return (
                   <>
-                    <li>{temp + index}</li>
+                    <div className="d-flex justify-content-between bg-info border border-rounded m-2 p-2">
+                      <h4>{temp.name}</h4>
+                      <div className="add_btn">
+                        <i
+                          className="far fa-edit add-btn p-2"
+                          title="Edit item"
+                          onClick={() => editItem(temp.id)}
+                        ></i>
+                        <i
+                          className="far fa-trash-alt add-btn p-2"
+                          title="Delete item"
+                          onClick={() => deleteItem(temp.id)}
+                        ></i>
+                      </div>
+                    </div>
                   </>
                 );
               })}
-            </ol>
           </div>
         </div>
       </div>

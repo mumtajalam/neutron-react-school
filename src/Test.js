@@ -24,7 +24,7 @@ const Test = () => {
       <br></br>
       {item && item.map((temps) => <span>{temps}</span>)}
       <br></br>
-      <button onClick={handlesubmit}>Add values</button>
+      <button onClick={handlesubmit}>increament</button>
       <button onClick={Allclear}>Clear values</button>
       <br></br>
     </div>

@@ -2,11 +2,10 @@ import React, { useState } from "react";
 
 const FormValidation = () => {
   const [formstatus, setFormStatus] = useState(false);
-
-  const initialState = { username: "", email: "", password: "" };
-
   const [FormData, setForData] = useState(initialState);
   const [formError, setFormError] = useState({});
+
+  const initialState = { username: "", email: "", password: "" };
 
   const handlesubmit = (event) => {
     event.preventDefault();

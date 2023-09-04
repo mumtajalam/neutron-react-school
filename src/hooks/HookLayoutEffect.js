@@ -2,16 +2,16 @@ import React, { useEffect, useLayoutEffect } from "react";
 
 const HookLayoutEffect = () => {
   useEffect(() => {
-    console.log("useEffect trigered...");
+    console.log("useEffect......");
   });
 
   useLayoutEffect(() => {
-    console.log("useLayoutEffect...");
+    console.log("useLayout Effect.......");
   });
   return (
-    <>
-      <div>Hook LayoutEffect</div>
-    </>
+    <div>
+      <h1>HookLayoutEffect</h1>
+    </div>
   );
 };
 
